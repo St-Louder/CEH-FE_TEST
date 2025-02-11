@@ -1,0 +1,15 @@
+.header-page{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.logo{
+    max-height: 100px;
+    object-fit: contain;
+}
+.search-bar{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
