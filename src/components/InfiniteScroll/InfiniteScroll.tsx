@@ -15,7 +15,7 @@ const InfiniteScroll: React.FC = () => {
 
   const debouncedFetch = useCallback(
     debounce(async (query: string, searchCriteria: "title" | "price") => {
-      if (!query) {
+      if (!query || !searchCriteria) {
         resetData(); 
         return;
       }
@@ -68,9 +68,14 @@ const InfiniteScroll: React.FC = () => {
           <AppstoreOutlined style={{ marginLeft: 20  }} />
           List Products
         </h2>
-        <SearchBar onSearchChange={handleSearch}  style={{ marginLeft: "10px"  }}/>
+        <SearchBar onSearchChange={handleSearch} />
 
       </div>
+      {searchQuery && (
+        <h3 style={{ textAlign: "center", marginTop: 10 }}>
+          Searching for: <strong>{searchQuery}</strong> ({criteria})
+        </h3>
+      )}
 
       <Row style={{ overflowX: "hidden", marginBottom: "30px" }}>
         {data.map((item) => (

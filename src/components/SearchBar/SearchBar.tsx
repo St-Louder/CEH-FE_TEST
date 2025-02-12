@@ -4,7 +4,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import { debounce } from "lodash";
 
 interface SearchBarProps {
-  onSearchChange: (query: string, criteria: string) => void;
+  onSearchChange: (query: string, criteria: "title" | "price") => void;
 }
 
 type Criteria = "title" | "price";
